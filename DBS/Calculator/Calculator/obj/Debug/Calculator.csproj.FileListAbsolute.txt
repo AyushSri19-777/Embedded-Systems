@@ -1,0 +1,27 @@
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Student\DBS Lab Sajal 170911200\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Student\DBS Lab Sajal 170911200\Lab1\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+D:\DBS\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\DBS\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\DBS\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\DBS\Calculator\Calculator\obj\Debug\Calculator.pdb

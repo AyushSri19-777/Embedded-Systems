@@ -1,0 +1,17 @@
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\bin\Debug\Notepad.exe.config
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\bin\Debug\Notepad.exe
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\bin\Debug\Notepad.pdb
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\obj\Debug\Notepad.Form1.resources
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\obj\Debug\Notepad.Properties.Resources.resources
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\obj\Debug\Notepad.csproj.GenerateResource.Cache
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\obj\Debug\Notepad.exe
+D:\Student\DBS Lab Sajal 170911200\Lab2\Notepad\Notepad\obj\Debug\Notepad.pdb
+D:\DBS\Notepad\Notepad\bin\Debug\Notepad.exe.config
+D:\DBS\Notepad\Notepad\bin\Debug\Notepad.exe
+D:\DBS\Notepad\Notepad\bin\Debug\Notepad.pdb
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.Form1.resources
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.Properties.Resources.resources
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.csproj.GenerateResource.cache
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.csproj.CoreCompileInputs.cache
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.exe
+D:\DBS\Notepad\Notepad\obj\Debug\Notepad.pdb
