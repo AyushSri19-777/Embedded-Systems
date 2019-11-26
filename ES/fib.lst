@@ -1,0 +1,160 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a program to FACT BY RECUR
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 4811            LDR              R0,=NUM1
+   14 00000002 6801            LDR              R1,[R0]
+   15 00000004 4E11            LDR              R6,=DST
+   16 00000006 F04F 0200       LDR              R2,=0X0
+   17 0000000A F04F 0301       LDR              R3,=0X1
+   18 0000000E F806 2B01       STRB             R2,[R6],#1
+   19 00000012 7033            STRB             R3,[R6]
+   20 00000014 F106 0607       ADD              R6,#07
+   21 00000018 F04F 0100       MOV              R1,#0
+   22 0000001C F04F 0201       MOV              R2,#1
+   23 00000020 F000 F801       BL               FIB
+   24 00000024         STOP
+   25 00000024 E7FE            B                STOP
+   26 00000026         
+   27 00000026 EB01 0302 
+                       FIB     ADD              R3,R1,R2
+   28 0000002A 4611            MOV              R1,R2
+   29 0000002C 461A            MOV              R2,R3
+   30 0000002E B508            PUSH             {R3,R14}
+   31 00000030 2B15            CMP              R3,#21
+   32 00000032 D205            BCS              DOWN
+   33 00000034 F7FF FFF7       BL               FIB
+   34 00000038 E8BD 4008       POP              {R3,R14}
+   35 0000003C F806 3D01       STRB             R3,[R6,#-1]!
+   36 00000040         
+   37 00000040 4770    DOWN    BX               LR
+   38 00000042         
+   39 00000042         
+   40 00000042 00 00 00000010 
+                       NUM1    DCD              0x10
+   41 00000048 00000000 
+              00000000         AREA             mydata, DATA,READWRITE
+   42 00000000 00000000 
+                       DST     DCD              0
+   43 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=fib.d -o
+fib.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\
+LPC17xx --predefine="__EVAL SETA 1" --list=.\fib.lst Practice\fib.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file Practice\fib.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file Practice\fib.asm
+   Uses
+      At line 3 in file Practice\fib.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DOWN 00000040
+
+Symbol: DOWN
+   Definitions
+      At line 37 in file Practice\fib.asm
+   Uses
+      At line 32 in file Practice\fib.asm
+Comment: DOWN used once
+FIB 00000026
+
+Symbol: FIB
+   Definitions
+      At line 27 in file Practice\fib.asm
+   Uses
+      At line 23 in file Practice\fib.asm
+      At line 33 in file Practice\fib.asm
+
+NUM1 00000044
+
+Symbol: NUM1
+   Definitions
+      At line 40 in file Practice\fib.asm
+   Uses
+      At line 13 in file Practice\fib.asm
+Comment: NUM1 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file Practice\fib.asm
+   Uses
+      At line 6 in file Practice\fib.asm
+      At line 11 in file Practice\fib.asm
+
+STOP 00000024
+
+Symbol: STOP
+   Definitions
+      At line 24 in file Practice\fib.asm
+   Uses
+      At line 25 in file Practice\fib.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file Practice\fib.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 42 in file Practice\fib.asm
+   Uses
+      At line 15 in file Practice\fib.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 41 in file Practice\fib.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

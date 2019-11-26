@@ -1,0 +1,1 @@
+L2Q1.o: LAB1\L2Q1.asm

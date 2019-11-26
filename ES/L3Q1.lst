@@ -1,0 +1,149 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a program to multiply two 32 bit numbers by repet
+                       itive addition
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 4808            LDR              R0,=NUM1
+   14 00000002 4909            LDR              R1,=NUM2
+   15 00000004 4E09            LDR              R6,=DST
+   16 00000006 680A            LDR              R2,[R1]
+   17 00000008 6803            LDR              R3,[R0]
+   18 0000000A         
+   19 0000000A 18E4    UP      ADDS             R4,R3
+   20 0000000C F145 0500       ADC              R5,#0
+   21 00000010 3A01            SUBS             R2,#01
+   22 00000012 D1FA            BNE              UP
+   23 00000014 F846 5B04       STR              R5,[R6],#4
+   24 00000018 6034            STR              R4,[R6]
+   25 0000001A         STOP
+   26 0000001A E7FE            B                STOP
+   27 0000001C 00000055 
+                       NUM1    DCD              0x00000055
+   28 00000020 00000011 
+                       NUM2    DCD              0x00000011
+   29 00000024 00000000 
+              00000000 
+              00000000         AREA             mydata, DATA,READWRITE
+   30 00000000 00000000 
+                       DST     DCD              0
+   31 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=L3Q1.d -
+oL3Q1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NX
+P\LPC17xx --predefine="__EVAL SETA 1" --list=.\L3Q1.lst LAB3\L3Q1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file LAB3\L3Q1.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file LAB3\L3Q1.asm
+   Uses
+      At line 3 in file LAB3\L3Q1.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NUM1 0000001C
+
+Symbol: NUM1
+   Definitions
+      At line 27 in file LAB3\L3Q1.asm
+   Uses
+      At line 13 in file LAB3\L3Q1.asm
+Comment: NUM1 used once
+NUM2 00000020
+
+Symbol: NUM2
+   Definitions
+      At line 28 in file LAB3\L3Q1.asm
+   Uses
+      At line 14 in file LAB3\L3Q1.asm
+Comment: NUM2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file LAB3\L3Q1.asm
+   Uses
+      At line 6 in file LAB3\L3Q1.asm
+      At line 11 in file LAB3\L3Q1.asm
+
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 25 in file LAB3\L3Q1.asm
+   Uses
+      At line 26 in file LAB3\L3Q1.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 19 in file LAB3\L3Q1.asm
+   Uses
+      At line 22 in file LAB3\L3Q1.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file LAB3\L3Q1.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 30 in file LAB3\L3Q1.asm
+   Uses
+      At line 15 in file LAB3\L3Q1.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 29 in file LAB3\L3Q1.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

@@ -1,0 +1,1 @@
+DIV.o: DIV.ASM

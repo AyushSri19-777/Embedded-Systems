@@ -1,0 +1,139 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Practice
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 F04F 004A       MOV              R0,#0X4A
+   14 00000004 4B08            LDR              R3,=DST
+   15 00000006 F04F 0402       MOV              R4,#2
+   16 0000000A F000 010F 
+                       UP      AND              R1,R0,#0X0F
+   17 0000000E 290B            CMP              R1,#0XB
+   18 00000010 D301            BCC              DOWN
+   19 00000012 F101 0107       ADD              R1,0X07
+   20 00000016         
+   21 00000016 F101 0130 
+                       DOWN    ADD              R1,0X30
+   22 0000001A F843 1B04       STR              R1,[R3],#4
+   23 0000001E EA4F 1010       LSR              R0,#4
+   24 00000022         
+   25 00000022 3C01            SUBS             R4,#01
+   26 00000024 D1F1            BNE              UP
+   27 00000026         
+   28 00000026         STOP
+   29 00000026 E7FE            B                STOP
+   30 00000028 00000000        AREA             mydata, DATA,READWRITE
+   31 00000000 00000000 
+                       DST     DCD              0
+   32 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=prt1.d -
+oprt1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NX
+P\LPC17xx --predefine="__EVAL SETA 1" --list=.\prt1.lst LAB3\prt1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file LAB3\prt1.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file LAB3\prt1.asm
+   Uses
+      At line 3 in file LAB3\prt1.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DOWN 00000016
+
+Symbol: DOWN
+   Definitions
+      At line 21 in file LAB3\prt1.asm
+   Uses
+      At line 18 in file LAB3\prt1.asm
+Comment: DOWN used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file LAB3\prt1.asm
+   Uses
+      At line 6 in file LAB3\prt1.asm
+      At line 11 in file LAB3\prt1.asm
+
+STOP 00000026
+
+Symbol: STOP
+   Definitions
+      At line 28 in file LAB3\prt1.asm
+   Uses
+      At line 29 in file LAB3\prt1.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 16 in file LAB3\prt1.asm
+   Uses
+      At line 26 in file LAB3\prt1.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file LAB3\prt1.asm
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 31 in file LAB3\prt1.asm
+   Uses
+      At line 14 in file LAB3\prt1.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 30 in file LAB3\prt1.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table

@@ -1,0 +1,1 @@
+pushstm.o: pushstm.asm

@@ -1,0 +1,1 @@
+Prct.o: Prct.asm

@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a program to subtract two 32 bit numbers
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 4806            LDR              R0,=NUM1
+   14 00000002 4907            LDR              R1,=NUM2
+   15 00000004 4A07            LDR              R2,=DST
+   16 00000006         
+   17 00000006 6804            LDR              R4,[R0]
+   18 00000008 680D            LDR              R5,[R1]
+   19 0000000A EBA4 0605       SUB              R6,R4,R5
+   20 0000000E 6016            STR              R6,[R2]
+   21 00000010         STOP
+   22 00000010 E7FE            B                STOP
+   23 00000012 00 00 00007658 
+                       NUM1    DCD              0x00007658
+   24 00000018 000037A6 
+                       NUM2    DCD              0x000037A6
+   25 0000001C 00000000 
+              00000000 
+              00000000         AREA             mydata, DATA,READWRITE
+   26 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 DST     DCD              0,0,0,0
+   27 00000010                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=L2Q3.d -
+oL2Q3.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NX
+P\LPC17xx --predefine="__EVAL SETA 1" --list=.\L2Q3.lst LAB2\L2Q3.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file LAB2\L2Q3.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file LAB2\L2Q3.asm
+   Uses
+      At line 3 in file LAB2\L2Q3.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NUM1 00000014
+
+Symbol: NUM1
+   Definitions
+      At line 23 in file LAB2\L2Q3.asm
+   Uses
+      At line 13 in file LAB2\L2Q3.asm
+Comment: NUM1 used once
+NUM2 00000018
+
+Symbol: NUM2
+   Definitions
+      At line 24 in file LAB2\L2Q3.asm
+   Uses
+      At line 14 in file LAB2\L2Q3.asm
+Comment: NUM2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file LAB2\L2Q3.asm
+   Uses
+      At line 6 in file LAB2\L2Q3.asm
+      At line 11 in file LAB2\L2Q3.asm
+
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 21 in file LAB2\L2Q3.asm
+   Uses
+      At line 22 in file LAB2\L2Q3.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file LAB2\L2Q3.asm
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 26 in file LAB2\L2Q3.asm
+   Uses
+      At line 15 in file LAB2\L2Q3.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 25 in file LAB2\L2Q3.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table

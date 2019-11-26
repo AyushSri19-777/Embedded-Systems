@@ -1,0 +1,129 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0x10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008         
+    7 00000008                 ALIGN
+    8 00000008                 AREA             mycode, CODE, READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           Reset_Handler
+   11 00000000         Reset_Handler
+   12 00000000 4809            LDR              R0,=0X12131415
+   13 00000002 490A            LDR              R1,=0XABCDEF12
+   14 00000004 4A0A            LDR              R2,=0X12345678
+   15 00000006 F8DF D02C       LDR              R13,=0X10001000
+   16 0000000A F04F 3411       LDR              R4,=0X11111111
+   17 0000000E B406            PUSH             {R2,R1}
+   18 00000010 E88D 0006       STM              R13,{R1,R2}
+   19 00000014 B405            STMDB            R13!,{R2,R0}
+   20 00000016 E89D 00C0       LDM              R13,{R6,R7}
+   21 0000001A F85D AB04       POP              {R10}
+   22 0000001E E93D 00C0       LDMDB            R13!,{R6,R7}
+   23 00000022         STOP
+   24 00000022 E7FE            B                STOP
+   25 00000024 00000723 
+                       SRC     DCD              0X0723
+   26 00000028 12131415 
+              ABCDEF12 
+              12345678 
+              10001000         AREA             mydata, DATA,READWRITE
+   27 00000000 00000000 
+                       DST     DCD              0
+   28 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=pushstm.
+d -opushstm.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\
+Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=pushstm.lst pushstm.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file pushstm.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file pushstm.asm
+   Uses
+      At line 2 in file pushstm.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 11 in file pushstm.asm
+   Uses
+      At line 5 in file pushstm.asm
+      At line 10 in file pushstm.asm
+
+SRC 00000024
+
+Symbol: SRC
+   Definitions
+      At line 25 in file pushstm.asm
+   Uses
+      None
+Comment: SRC unused
+STOP 00000022
+
+Symbol: STOP
+   Definitions
+      At line 23 in file pushstm.asm
+   Uses
+      At line 24 in file pushstm.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 8 in file pushstm.asm
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 27 in file pushstm.asm
+   Uses
+      None
+Comment: DST unused
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 26 in file pushstm.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+341 symbols in table

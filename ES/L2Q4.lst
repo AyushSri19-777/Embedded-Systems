@@ -1,0 +1,159 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a program to subtract two 128 bit numbers
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 4813            LDR              R0,=NUM1
+   14 00000002 4914            LDR              R1,=NUM2
+   15 00000004 4A14            LDR              R2,=DST
+   16 00000006 F04F 0304       MOV              R3,#04
+   17 0000000A F04F 5700       LDR              R7,=0x20000000
+   18 0000000E F387 8803       MSR              xPSR,R7
+   19 00000012         
+   20 00000012 F850 4B04 
+                       UP      LDR              R4,[R0],#4
+   21 00000016 F851 5B04       LDR              R5,[R1],#4
+   22 0000001A EB74 0605       SBCS             R6,R4,R5
+   23 0000001E F842 6B04       STR              R6,[R2],#04
+   24 00000022 F1A3 0301       SUB              R3,#01
+   25 00000026 F093 0F00       TEQ              R3,#00
+   26 0000002A D1F2            BNE              UP
+   27 0000002C         STOP
+   28 0000002C E7FE            B                STOP
+   29 0000002E 00 00 00000008 
+              0000000A 
+              00000005 
+              00000007 NUM1    DCD              0x00000008,0x0000000A,0x0000000
+5,0x00000007
+   30 00000040 00000006 
+              00000007 
+              00000008 
+              00000002 NUM2    DCD              0x00000006,0x00000007,0x0000000
+8,0x00000002
+   31 00000050 00000000 
+              00000000 
+              00000000         AREA             mydata, DATA,READWRITE
+   32 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 DST     DCD              0,0,0,0
+   33 00000010                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=L2Q4.d -
+oL2Q4.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NX
+P\LPC17xx --predefine="__EVAL SETA 1" --list=.\L2Q4.lst LAB2\L2Q4.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file LAB2\L2Q4.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file LAB2\L2Q4.asm
+   Uses
+      At line 3 in file LAB2\L2Q4.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NUM1 00000030
+
+Symbol: NUM1
+   Definitions
+      At line 29 in file LAB2\L2Q4.asm
+   Uses
+      At line 13 in file LAB2\L2Q4.asm
+Comment: NUM1 used once
+NUM2 00000040
+
+Symbol: NUM2
+   Definitions
+      At line 30 in file LAB2\L2Q4.asm
+   Uses
+      At line 14 in file LAB2\L2Q4.asm
+Comment: NUM2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file LAB2\L2Q4.asm
+   Uses
+      At line 6 in file LAB2\L2Q4.asm
+      At line 11 in file LAB2\L2Q4.asm
+
+STOP 0000002C
+
+Symbol: STOP
+   Definitions
+      At line 27 in file LAB2\L2Q4.asm
+   Uses
+      At line 28 in file LAB2\L2Q4.asm
+Comment: STOP used once
+UP 00000012
+
+Symbol: UP
+   Definitions
+      At line 20 in file LAB2\L2Q4.asm
+   Uses
+      At line 26 in file LAB2\L2Q4.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file LAB2\L2Q4.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 32 in file LAB2\L2Q4.asm
+   Uses
+      At line 15 in file LAB2\L2Q4.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 31 in file LAB2\L2Q4.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

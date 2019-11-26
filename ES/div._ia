@@ -1,0 +1,5 @@
+--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\NXP\LPC17xx 
+--list "DIV.lst" --xref -o "DIV.o" --depend "DIV.d" "DIV.ASM"

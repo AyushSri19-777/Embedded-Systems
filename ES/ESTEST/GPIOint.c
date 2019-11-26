@@ -1,0 +1,20 @@
+#include <LPC17XX.H>
+unsigned long x;
+int main(void)
+{
+	LPC_PINCON->PINSEL0&=0XFFFF3FFF;
+	LPC_GPIO0->FIODIR=00;
+	LPC_GPIOINT->IO0IntEnR=0x00000080;
+	LPC_PINCON->PINSEL2&=0XFFFFFFCF;
+	LPC_GPIO1->FIODIR=(1<<2);
+	NVIC_EnableIRQ(EINT3_IRQn);
+	while(1);
+}
+void EINT3_IRQHandler()
+{
+	
+	x=LPC_GPIOINT->IO0IntStatR&(1<<7);
+	if(x)
+		LPC_GPIO1->FIOPIN=~LPC_GPIO1->FIOPIN;
+	LPC_GPIOINT->IO0IntClr=1<<7;
+}

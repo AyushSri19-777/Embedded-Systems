@@ -1,0 +1,164 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a program to FACT BY RECUR
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 F04F 002A       MOV              R0,#42
+   14 00000004 F04F 0138       MOV              R1,#56
+   15 00000008 F04F 0801       MOV              R8,#1
+   16 0000000C F000 F801       BL               HCF
+   17 00000010         STOP
+   18 00000010 E7FE            B                STOP
+   19 00000012 E92D 4100 
+                       HCF     PUSH             {R8,R14}
+   20 00000016 2800            CMP              R0,#0
+   21 00000018 D008            BEQ              DOWN
+   22 0000001A 4606            MOV              R6,R0
+   23 0000001C 460F            MOV              R7,R1
+   24 0000001E F000 F806       BL               DIV
+   25 00000022 4638            MOV              R0,R7
+   26 00000024 F7FF FFF5       BL               HCF
+   27 00000028 E8BD 4040       POP              {R6,LR}
+   28 0000002C         
+   29 0000002C 4770    DOWN    BX               LR
+   30 0000002E         
+   31 0000002E         DIV
+   32 0000002E         
+   33 0000002E 1BBF    UP      SUBS             R7,R6
+   34 00000030 F108 0801       ADD              R8,#1
+   35 00000034 42B7            CMP              R7,R6
+   36 00000036 D2FA            BCS              UP
+   37 00000038 4770            BX               LR
+   38 0000003A                 AREA             mydata, DATA,READWRITE
+   39 00000000 00000000 
+                       DST     DCD              0
+   40 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=hcfrec.d
+ -ohcfrec.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\In
+c\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\hcfrec.lst Practice\hcfrec.a
+sm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file Practice\hcfrec.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file Practice\hcfrec.asm
+   Uses
+      At line 3 in file Practice\hcfrec.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DIV 0000002E
+
+Symbol: DIV
+   Definitions
+      At line 31 in file Practice\hcfrec.asm
+   Uses
+      At line 24 in file Practice\hcfrec.asm
+Comment: DIV used once
+DOWN 0000002C
+
+Symbol: DOWN
+   Definitions
+      At line 29 in file Practice\hcfrec.asm
+   Uses
+      At line 21 in file Practice\hcfrec.asm
+Comment: DOWN used once
+HCF 00000012
+
+Symbol: HCF
+   Definitions
+      At line 19 in file Practice\hcfrec.asm
+   Uses
+      At line 16 in file Practice\hcfrec.asm
+      At line 26 in file Practice\hcfrec.asm
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file Practice\hcfrec.asm
+   Uses
+      At line 6 in file Practice\hcfrec.asm
+      At line 11 in file Practice\hcfrec.asm
+
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 17 in file Practice\hcfrec.asm
+   Uses
+      At line 18 in file Practice\hcfrec.asm
+Comment: STOP used once
+UP 0000002E
+
+Symbol: UP
+   Definitions
+      At line 33 in file Practice\hcfrec.asm
+   Uses
+      At line 36 in file Practice\hcfrec.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file Practice\hcfrec.asm
+   Uses
+      None
+Comment: mycode unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 39 in file Practice\hcfrec.asm
+   Uses
+      None
+Comment: DST unused
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 38 in file Practice\hcfrec.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table
